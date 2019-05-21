@@ -1,0 +1,116 @@
+body{
+	margin-bottom:20px;
+}
+h1,h2,h3,h4,h5{
+	color:#358cab; /* commented out#358ccb;*/
+}
+blockquote>p{
+	color:#666;
+	font-size:14px;
+}
+footer{
+	text-align:center;
+}
+a{
+	text-decoration: underline;
+}
+a:visited{
+	color:#660066;
+}
+.img-container{
+	text-align:center;
+}
+img, p > img{
+	/*display:block;*/
+	text-align:center;
+	display:inline-block;
+	margin:auto;
+	padding:5px;
+	max-width:90%;
+}
+.local-link{
+	border:1px solid #1f77b4;
+	padding: 2px 4px;
+	font-size: 90%;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+}
+
+#show-hide-local-link-popover{
+	margin-top:10px;
+	cursor:pointer;
+}
+#show-hide-local-link-popover:hover{
+	color:#1f77b4;
+}
+#show-hide-local-link-popover.clicked{
+	border:1px solid #1f77b4;
+	padding: 2px 4px;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+}
+.highlight{
+	background-color: #ffffaa;
+}
+.popover{
+	max-width:70%;
+	width:500px;
+	overflow-y:scroll;
+	max-height:50%;
+	background-color:#fafaff;
+	border-radius: 5px;
+	border: 3px solid #aaa;
+	box-shadow: 0 0 0 2px #aaa;
+	padding:20px;
+}
+
+.popover-close{
+	position:absolute;
+	float:right;
+	cursor:pointer;
+	border-radius: 5px;
+	padding:2px
+
+}
+.popover-close:hover{
+	border:1px solid #1f77b4;
+	background-color:#aaa;
+}
+.popover.right{
+	margin-left:20px;
+}
+.popover h[1-5]{
+	zoom:.9;
+}
+
+/* use display block / none instead of opacity so it doesn't hide what's behind it */
+.sidebar-popover.in, .link-popover.in{
+	display:block !important;
+	/*visibility:visible !important;
+	-webkit-transition: visibility .5s ease;
+    transition: visibility .5s ease;*/
+}
+.sidebar-popover, .link-popover{
+	display:none !important;
+	/*visibility:hidden !important;
+	-webkit-transition: visibility .15s ease;
+    transition: visibility .15s ease;*/
+}
+
+/*"#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"*/
+.green{ color:#2ca02c;}
+.steelblue{ color:#1f77b4;}
+.orange{ color:#ff7f0e;}
+.red{ color:#d62728;}
+.yellow{ color:#ffff00;}
+
+/* Bootstrap color schemes */
+.gray-darker{ color:  #222; }
+.gray-dark{color:  #333;}
+.gray{color:  #555;}
+.gray-light{color:  #999;}
+.gray-lighter{color:  #eee; }
+
+/** {
+	border:1px solid red !important;
+}*/

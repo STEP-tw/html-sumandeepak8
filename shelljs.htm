@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://adilapapaya.com/docs/shelljs/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>shelljs</title>
+    
+    <link type="text/css" rel="stylesheet" href="./shelljs_files/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="./shelljs_files/bootstrap-sidebar-nav-nav-list.css">
+    <link type="text/css" rel="stylesheet" href="./shelljs_files/github.css">
+
+    <!-- My additional styles global styles class -->
+    <link type="text/css" rel="stylesheet" href="./shelljs_files/papaya-style.css">
+  
+    <!-- These come BEFORE body or the sidebar will load wonky -->
+    <script async="" src="./shelljs_files/analytics.js"></script><script type="text/javascript" src="./shelljs_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./shelljs_files/bootstrap.min.js"></script>
+
+  </head>
+<body>
+
+<div id="wrapper" class="">
+  <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <div class="nav nav-list">
+          <div class="sidebar-brand">
+             Table of Contents
+          </div>
+        </div>
+        <ul class="nav nav-list">
+<li class="level-1" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#shelljsunixshellcommandsfornodejs">ShellJS - Unix shell commands for Node.js </a><a href="http://adilapapaya.com/docs/shelljs/http//travis-ci.org/arturadib/shelljs"><img src="./shelljs_files/unknown.png" alt="Build Status"></a></li>
+<hr class="level-1">
+<li class="level-2" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#installing">Installing</a></li>
+<hr class="level-2">
+<li class="level-2" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#examples">Examples</a></li>
+<hr class="level-2">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#javascript">JavaScript</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#coffeescript">CoffeeScript</a></li>
+<hr class="level-3">
+<li class="level-2" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#globalvslocal">Global vs. Local</a></li>
+<hr class="level-2">
+<li class="level-2" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#maketool">Make tool</a></li>
+<hr class="level-2">
+<li class="level-2" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#commandreference">Command reference</a></li>
+<hr class="level-2">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#cd39dir39">cd('dir')</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#pwd">pwd()</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#lsoptionspathpath">ls([options ,] path [,path ...])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#lsoptionspatharray">ls([options ,] path_array)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#findpathpath">find(path [,path ...])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#findpatharray">find(path_array)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#cpoptionssourcesourcedest">cp([options ,] source [,source ...], dest)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#cpoptionssourcearraydest">cp([options ,] source_array, dest)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#rmoptionsfilefile">rm([options ,] file [, file ...])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#rmoptionsfilearray">rm([options ,] file_array)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#mvsourcesourcedest39">mv(source [, source ...], dest')</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#mvsourcearraydest39">mv(source_array, dest')</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#mkdiroptionsdirdir">mkdir([options ,] dir [, dir ...])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#mkdiroptionsdirarray">mkdir([options ,] dir_array)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#testexpression">test(expression)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#catfilefile">cat(file [, file ...])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#catfilearray">cat(file_array)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#39string39tofile">'string'.to(file)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#39string39toendfile">'string'.toEnd(file)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#sedoptionssearchregexreplacementfile">sed([options ,] search_regex, replacement, file)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#grepoptionsregexfilterfilefile">grep([options ,] regex_filter, file [, file ...])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#grepoptionsregexfilterfilearray">grep([options ,] regex_filter, file_array)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#whichcommand">which(command)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#echostringstring">echo(string [,string ...])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#pushdoptionsdir39n3939n39">pushd([options,] [dir | '-N' | '+N'])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#popdoptions39n3939n39">popd([options,] ['-N' | '+N'])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#dirsoptions39n3939n39">dirs([options | '+N' | '-N'])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#lnoptionssourcedest">ln(options, source, dest)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#lnsourcedest">ln(source, dest)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#exitcode">exit(code)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#env39varname39">env['VAR_NAME']</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#execcommandoptionscallback">exec(command [, options] [, callback])</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#chmodoctalmodeoctalstringfile">chmod(octal_mode || octal_string, file)</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#chmodsymbolicmodefile">chmod(symbolic_mode, file)</a></li>
+<hr class="level-3">
+<li class="level-2" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#nonunixcommands">Non-Unix commands</a></li>
+<hr class="level-2">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#tempdir">tempdir()</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#error">error()</a></li>
+<hr class="level-3">
+<li class="level-2" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#configuration">Configuration</a></li>
+<hr class="level-2">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#configsilent">config.silent</a></li>
+<hr class="level-3">
+<li class="level-3" data-original-title="" title=""><a href="http://adilapapaya.com/docs/shelljs/#configfatal">config.fatal</a></li>
+<hr class="level-3"></ul>
+    </div>
+
+    <div id="page-content-wrapper">
+      <div class="page-content inset">
+        <a name="shelljsunixshellcommandsfornodejs"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#shelljsunixshellcommandsfornodejs"></a><h1>ShellJS - Unix shell commands for Node.js <a href="http://travis-ci.org/arturadib/shelljs"><img src="./shelljs_files/unknown.png" alt="Build Status"></a></h1>
+<p>ShellJS is a portable <strong>(Windows/Linux/OS X)</strong> implementation of Unix shell commands on top of the Node.js API. You can use it to eliminate your shell script's dependency on Unix while still keeping its familiar and powerful commands. You can also install it globally so you can run it from outside Node projects - say goodbye to those gnarly Bash scripts!</p>
+<p>The project is <a href="http://travis-ci.org/arturadib/shelljs">unit-tested</a> and battled-tested in projects like:</p>
+<ul class="list">
+<li><a href="http://github.com/mozilla/pdf.js">PDF.js</a> - Firefox's next-gen PDF reader</li>
+<li><a href="http://getfirebug.com/">Firebug</a> - Firefox's infamous debugger</li>
+<li><a href="http://jshint.com/">JSHint</a> - Most popular JavaScript linter</li>
+<li><a href="http://zeptojs.com/">Zepto</a> - jQuery-compatible JavaScript library for modern browsers</li>
+<li><a href="http://yeoman.io/">Yeoman</a> - Web application stack and development tool</li>
+<li><a href="http://deployd.com/">Deployd.com</a> - Open source PaaS for quick API backend generation</li>
+</ul>
+<p>and <a href="https://npmjs.org/browse/depended/shelljs">many more</a>.</p>
+<a name="installing"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#installing"></a><h2>Installing</h2>
+<p>Via npm:</p>
+<pre class="hljs"><code>$ npm install [-g] shelljs</code></pre><p>If the global option <code>-g</code> is specified, the binary <code>shjs</code> will be installed. This makes it possible to
+run ShellJS scripts much like any shell script from the command line, i.e. without requiring a <code>node_modules</code> folder:</p>
+<pre class="hljs"><code>$ shjs my_script</code></pre><p>You can also just copy <code>shell.js</code> into your project's directory, and <code>require()</code> accordingly.</p>
+<a name="examples"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#examples"></a><h2>Examples</h2>
+<a name="javascript"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#javascript"></a><h3>JavaScript</h3>
+<pre class="hljs"><code><span class="hljs-built_in">require</span>(<span class="hljs-string">'shelljs/global'</span>);
+
+<span class="hljs-keyword">if</span> (!which(<span class="hljs-string">'git'</span>)) {
+  echo(<span class="hljs-string">'Sorry, this script requires git'</span>);
+  exit(<span class="hljs-number">1</span>);
+}
+
+<span class="hljs-comment">// Copy files to release dir</span>
+mkdir(<span class="hljs-string">'-p'</span>, <span class="hljs-string">'out/Release'</span>);
+cp(<span class="hljs-string">'-R'</span>, <span class="hljs-string">'stuff/<em>'</em></span><em>, <span class="hljs-string">'out/Release'</span>);
+
+<span class="hljs-comment">// Replace macros in each .js file</span>
+cd(<span class="hljs-string">'lib'</span>);
+ls(<span class="hljs-string">'</span></em>.js').forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(file)</span> {</span>
+  sed(<span class="hljs-string">'-i'</span>, <span class="hljs-string">'BUILD_VERSION'</span>, <span class="hljs-string">'v0.1.2'</span>, file);
+  sed(<span class="hljs-string">'-i'</span>, <span class="hljs-regexp">/.<em>REMOVE_THIS_LINE.</em>\n/</span>, <span class="hljs-string">''</span>, file);
+  sed(<span class="hljs-string">'-i'</span>, <span class="hljs-regexp">/.<em>REPLACE_LINE_WITH_MACRO.</em>\n/</span>, cat(<span class="hljs-string">'macro.js'</span>), file);
+});
+cd(<span class="hljs-string">'..'</span>);
+
+<span class="hljs-comment">// Run external tool synchronously</span>
+<span class="hljs-keyword">if</span> (exec(<span class="hljs-string">'git commit -am "Auto-commit"'</span>).code !== <span class="hljs-number">0</span>) {
+  echo(<span class="hljs-string">'Error: Git commit failed'</span>);
+  exit(<span class="hljs-number">1</span>);
+}</code></pre><a name="coffeescript"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#coffeescript"></a><h3>CoffeeScript</h3>
+<pre class="hljs"><code><span class="hljs-built_in">require</span> <span class="hljs-string">'shelljs/global'</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> which <span class="hljs-string">'git'</span>
+  echo <span class="hljs-string">'Sorry, this script requires git'</span>
+  exit <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Copy files to release dir</span>
+mkdir <span class="hljs-string">'-p'</span>, <span class="hljs-string">'out/Release'</span>
+cp <span class="hljs-string">'-R'</span>, <span class="hljs-string">'stuff/<em>'</em></span><em>, <span class="hljs-string">'out/Release'</span>
+
+<span class="hljs-comment"># Replace macros in each .js file</span>
+cd <span class="hljs-string">'lib'</span>
+<span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> ls <span class="hljs-string">'</span></em>.js'
+  sed <span class="hljs-string">'-i'</span>, <span class="hljs-string">'BUILD_VERSION'</span>, <span class="hljs-string">'v0.1.2'</span>, file
+  sed <span class="hljs-string">'-i'</span>, <span class="hljs-regexp">/.<em>REMOVE_THIS_LINE.</em>\n/</span>, <span class="hljs-string">''</span>, file
+  sed <span class="hljs-string">'-i'</span>, <span class="hljs-regexp">/.<em>REPLACE_LINE_WITH_MACRO.</em>\n/</span>, cat <span class="hljs-string">'macro.js'</span>, file
+cd <span class="hljs-string">'..'</span>
+
+<span class="hljs-comment"># Run external tool synchronously</span>
+<span class="hljs-keyword">if</span> (exec <span class="hljs-string">'git commit -am "Auto-commit"'</span>).code != <span class="hljs-number">0</span>
+  echo <span class="hljs-string">'Error: Git commit failed'</span>
+  exit <span class="hljs-number">1</span></code></pre><a name="globalvslocal"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#globalvslocal"></a><h2>Global vs. Local</h2>
+<p>The example above uses the convenience script <code>shelljs/global</code> to reduce verbosity. If polluting your global namespace is not desirable, simply require <code>shelljs</code>.</p>
+<p>Example:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> shell = <span class="hljs-built_in">require</span>(<span class="hljs-string">'shelljs'</span>);
+shell.echo(<span class="hljs-string">'hello world'</span>);</code></pre><a name="maketool"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#maketool"></a><h2>Make tool</h2>
+<p>A convenience script <code>shelljs/make</code> is also provided to mimic the behavior of a Unix Makefile. In this case all shell objects are global, and command line arguments will cause the script to execute only the corresponding function in the global <code>target</code> object. To avoid redundant calls, target functions are executed only once per script.</p>
+<p>Example (CoffeeScript):</p>
+<pre class="hljs"><code><span class="hljs-built_in">require</span> <span class="hljs-string">'shelljs/make'</span>
+
+target.<span class="hljs-function"><span class="hljs-title">all</span> = -&gt;</span>
+  target.bundle()
+  target.docs()
+
+target.<span class="hljs-function"><span class="hljs-title">bundle</span> = -&gt;</span>
+  cd <strong>dirname
+  mkdir <span class="hljs-string">'build'</span>
+  cd <span class="hljs-string">'lib'</span>
+  (cat <span class="hljs-string">'*.js'</span>).to <span class="hljs-string">'../build/output.js'</span>
+
+target.<span class="hljs-function"><span class="hljs-title">docs</span> = -&gt;</span>
+  cd </strong>dirname
+  mkdir <span class="hljs-string">'docs'</span>
+  cd <span class="hljs-string">'lib'</span>
+  <span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> ls <span class="hljs-string">'*.js'</span>
+    text = grep <span class="hljs-string">'//@'</span>, file     <span class="hljs-comment"># extract special comments</span>
+    text.replace <span class="hljs-string">'//@'</span>, <span class="hljs-string">''</span>      <span class="hljs-comment"># remove comment tags</span>
+    text.to <span class="hljs-string">'docs/my_docs.md'</span></code></pre><p>To run the target <code>all</code>, call the above script without arguments: <code>$ node make</code>. To run the target <code>docs</code>: <code>$ node make docs</code>, and so on.</p>
+<!-- 
+
+  DO NOT MODIFY BEYOND THIS POINT - IT'S AUTOMATICALLY GENERATED
+
+-->
+
+
+<a name="commandreference"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#commandreference"></a><h2>Command reference</h2>
+<p>All commands run synchronously, unless otherwise stated.</p>
+<a name="cd39dir39"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#cd39dir39"></a><h3>cd('dir')</h3>
+<p>Changes to directory <code>dir</code> for the duration of the script</p>
+<a name="pwd"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#pwd"></a><h3>pwd()</h3>
+<p>Returns the current directory.</p>
+<a name="lsoptionspathpath"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#lsoptionspathpath"></a><h3>ls([options ,] path [,path ...])</h3>
+<a name="lsoptionspatharray"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#lsoptionspatharray"></a><h3>ls([options ,] path_array)</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>-R</code>: recursive</li>
+<li><code>-A</code>: all files (include files beginning with <code>.</code>, except for <code>.</code> and <code>..</code>)</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>ls(<span class="hljs-string">'projs/*.js'</span>);
+ls(<span class="hljs-string">'-R'</span>, <span class="hljs-string">'/users/me'</span>, <span class="hljs-string">'/tmp'</span>);
+ls(<span class="hljs-string">'-R'</span>, [<span class="hljs-string">'/users/me'</span>, <span class="hljs-string">'/tmp'</span>]); <span class="hljs-comment">// same as above</span></code></pre><p>Returns array of files in the given path, or in current directory if no path provided.</p>
+<a name="findpathpath"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#findpathpath"></a><h3>find(path [,path ...])</h3>
+<a name="findpatharray"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#findpatharray"></a><h3>find(path_array)</h3>
+<p>Examples:</p>
+<pre class="hljs"><code>find(<span class="hljs-string">'src'</span>, <span class="hljs-string">'lib'</span>);
+find([<span class="hljs-string">'src'</span>, <span class="hljs-string">'lib'</span>]); <span class="hljs-comment">// same as above</span>
+find(<span class="hljs-string">'.'</span>).filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(file)</span> {</span> <span class="hljs-keyword">return</span> file.match(<span class="hljs-regexp">/.js$/</span>); });</code></pre><p>Returns array of all files (however deep) in the given paths.</p>
+<p>The main difference from <code>ls('-R', path)</code> is that the resulting file names
+include the base directories, e.g. <code>lib/resources/file1</code> instead of just <code>file1</code>.</p>
+<a name="cpoptionssourcesourcedest"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#cpoptionssourcesourcedest"></a><h3>cp([options ,] source [,source ...], dest)</h3>
+<a name="cpoptionssourcearraydest"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#cpoptionssourcearraydest"></a><h3>cp([options ,] source_array, dest)</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>-f</code>: force</li>
+<li><code>-r, -R</code>: recursive</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>cp(<span class="hljs-string">'file1'</span>, <span class="hljs-string">'dir1'</span>);
+cp(<span class="hljs-string">'-Rf'</span>, <span class="hljs-string">'/tmp/<em>'</em></span><em>, <span class="hljs-string">'/usr/local/</span></em>', <span class="hljs-string">'/home/tmp'</span>);
+cp(<span class="hljs-string">'-Rf'</span>, [<span class="hljs-string">'/tmp/<em>'</em></span><em>, <span class="hljs-string">'/usr/local/</span></em>'], <span class="hljs-string">'/home/tmp'</span>); <span class="hljs-comment">// same as above</span></code></pre><p>Copies files. The wildcard <code>*</code> is accepted.</p>
+<a name="rmoptionsfilefile"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#rmoptionsfilefile"></a><h3>rm([options ,] file [, file ...])</h3>
+<a name="rmoptionsfilearray"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#rmoptionsfilearray"></a><h3>rm([options ,] file_array)</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>-f</code>: force</li>
+<li><code>-r, -R</code>: recursive</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>rm(<span class="hljs-string">'-rf'</span>, <span class="hljs-string">'/tmp/*'</span>);
+rm(<span class="hljs-string">'some_file.txt'</span>, <span class="hljs-string">'another_file.txt'</span>);
+rm([<span class="hljs-string">'some_file.txt'</span>, <span class="hljs-string">'another_file.txt'</span>]); <span class="hljs-comment">// same as above</span></code></pre><p>Removes files. The wildcard <code>*</code> is accepted.</p>
+<a name="mvsourcesourcedest39"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#mvsourcesourcedest39"></a><h3>mv(source [, source ...], dest')</h3>
+<a name="mvsourcearraydest39"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#mvsourcearraydest39"></a><h3>mv(source_array, dest')</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>f</code>: force</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>mv(<span class="hljs-string">'-f'</span>, <span class="hljs-string">'file'</span>, <span class="hljs-string">'dir/'</span>);
+mv(<span class="hljs-string">'file1'</span>, <span class="hljs-string">'file2'</span>, <span class="hljs-string">'dir/'</span>);
+mv([<span class="hljs-string">'file1'</span>, <span class="hljs-string">'file2'</span>], <span class="hljs-string">'dir/'</span>); <span class="hljs-comment">// same as above</span></code></pre><p>Moves files. The wildcard <code>*</code> is accepted.</p>
+<a name="mkdiroptionsdirdir"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#mkdiroptionsdirdir"></a><h3>mkdir([options ,] dir [, dir ...])</h3>
+<a name="mkdiroptionsdirarray"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#mkdiroptionsdirarray"></a><h3>mkdir([options ,] dir_array)</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>p</code>: full path (will create intermediate dirs if necessary)</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>mkdir(<span class="hljs-string">'-p'</span>, <span class="hljs-string">'/tmp/a/b/c/d'</span>, <span class="hljs-string">'/tmp/e/f/g'</span>);
+mkdir(<span class="hljs-string">'-p'</span>, [<span class="hljs-string">'/tmp/a/b/c/d'</span>, <span class="hljs-string">'/tmp/e/f/g'</span>]); <span class="hljs-comment">// same as above</span></code></pre><p>Creates directories.</p>
+<a name="testexpression"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#testexpression"></a><h3>test(expression)</h3>
+<p>Available expression primaries:</p>
+<ul class="list">
+<li><code>'-b', 'path'</code>: true if path is a block device</li>
+<li><code>'-c', 'path'</code>: true if path is a character device</li>
+<li><code>'-d', 'path'</code>: true if path is a directory</li>
+<li><code>'-e', 'path'</code>: true if path exists</li>
+<li><code>'-f', 'path'</code>: true if path is a regular file</li>
+<li><code>'-L', 'path'</code>: true if path is a symboilc link</li>
+<li><code>'-p', 'path'</code>: true if path is a pipe (FIFO)</li>
+<li><code>'-S', 'path'</code>: true if path is a socket</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (test(<span class="hljs-string">'-d'</span>, path)) { <span class="hljs-comment">/<em> do something with dir </em>/</span> };
+<span class="hljs-keyword">if</span> (!test(<span class="hljs-string">'-f'</span>, path)) <span class="hljs-keyword">continue</span>; <span class="hljs-comment">// skip if it's a regular file</span></code></pre><p>Evaluates expression using the available primaries and returns corresponding value.</p>
+<a name="catfilefile"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#catfilefile"></a><h3>cat(file [, file ...])</h3>
+<a name="catfilearray"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#catfilearray"></a><h3>cat(file_array)</h3>
+<p>Examples:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> str = cat(<span class="hljs-string">'file*.txt'</span>);
+<span class="hljs-keyword">var</span> str = cat(<span class="hljs-string">'file1'</span>, <span class="hljs-string">'file2'</span>);
+<span class="hljs-keyword">var</span> str = cat([<span class="hljs-string">'file1'</span>, <span class="hljs-string">'file2'</span>]); <span class="hljs-comment">// same as above</span></code></pre><p>Returns a string containing the given file, or a concatenated string
+containing the files if more than one file is given (a new line character is
+introduced between each file). Wildcard <code>*</code> accepted.</p>
+<a name="39string39tofile"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#39string39tofile"></a><h3>'string'.to(file)</h3>
+<p>Examples:</p>
+<pre class="hljs"><code>cat(<span class="hljs-string">'input.txt'</span>).to(<span class="hljs-string">'output.txt'</span>);</code></pre><p>Analogous to the redirection operator <code>&gt;</code> in Unix, but works with JavaScript strings (such as
+those returned by <code>cat</code>, <code>grep</code>, etc). <em>Like Unix redirections, <code>to()</code> will overwrite any existing file!</em></p>
+<a name="39string39toendfile"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#39string39toendfile"></a><h3>'string'.toEnd(file)</h3>
+<p>Examples:</p>
+<pre class="hljs"><code>cat(<span class="hljs-string">'input.txt'</span>).toEnd(<span class="hljs-string">'output.txt'</span>);</code></pre><p>Analogous to the redirect-and-append operator <code>&gt;&gt;</code> in Unix, but works with JavaScript strings (such as
+those returned by <code>cat</code>, <code>grep</code>, etc).</p>
+<a name="sedoptionssearchregexreplacementfile"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#sedoptionssearchregexreplacementfile"></a><h3>sed([options ,] search_regex, replacement, file)</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>-i</code>: Replace contents of 'file' in-place. <em>Note that no backups will be created!</em></li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>sed(<span class="hljs-string">'-i'</span>, <span class="hljs-string">'PROGRAM_VERSION'</span>, <span class="hljs-string">'v0.1.3'</span>, <span class="hljs-string">'source.js'</span>);
+sed(<span class="hljs-regexp">/.<em>DELETE_THIS_LINE.</em>\n/</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'source.js'</span>);</code></pre><p>Reads an input string from <code>file</code> and performs a JavaScript <code>replace()</code> on the input
+using the given search regex and replacement string or function. Returns the new string after replacement.</p>
+<a name="grepoptionsregexfilterfilefile"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#grepoptionsregexfilterfilefile"></a><h3>grep([options ,] regex_filter, file [, file ...])</h3>
+<a name="grepoptionsregexfilterfilearray"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#grepoptionsregexfilterfilearray"></a><h3>grep([options ,] regex_filter, file_array)</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>-v</code>: Inverse the sense of the regex and print the lines not matching the criteria.</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>grep(<span class="hljs-string">'-v'</span>, <span class="hljs-string">'GLOBAL_VARIABLE'</span>, <span class="hljs-string">'<em>.js'</em></span><em>);
+grep(<span class="hljs-string">'GLOBAL_VARIABLE'</span>, <span class="hljs-string">'</span></em>.js');</code></pre><p>Reads input string from given files and returns a string containing all lines of the
+file that match the given <code>regex_filter</code>. Wildcard <code>*</code> accepted.</p>
+<a name="whichcommand"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#whichcommand"></a><h3>which(command)</h3>
+<p>Examples:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> nodeExec = which(<span class="hljs-string">'node'</span>);</code></pre><p>Searches for <code>command</code> in the system's PATH. On Windows looks for <code>.exe</code>, <code>.cmd</code>, and <code>.bat</code> extensions.
+Returns string containing the absolute path to the command.</p>
+<a name="echostringstring"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#echostringstring"></a><h3>echo(string [,string ...])</h3>
+<p>Examples:</p>
+<pre class="hljs"><code>echo(<span class="hljs-string">'hello world'</span>);
+<span class="hljs-keyword">var</span> str = echo(<span class="hljs-string">'hello world'</span>);</code></pre><p>Prints string to stdout, and returns string with additional utility methods
+like <code>.to()</code>.</p>
+<a name="pushdoptionsdir39n3939n39"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#pushdoptionsdir39n3939n39"></a><h3>pushd([options,] [dir | '-N' | '+N'])</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>-n</code>: Suppresses the normal change of directory when adding directories to the stack, so that only the stack is manipulated.</li>
+</ul>
+<p>Arguments:</p>
+<ul class="list">
+<li><code>dir</code>: Makes the current working directory be the top of the stack, and then executes the equivalent of <code>cd dir</code>.</li>
+<li><code>+N</code>: Brings the Nth directory (counting from the left of the list printed by dirs, starting with zero) to the top of the list by rotating the stack.</li>
+<li><code>-N</code>: Brings the Nth directory (counting from the right of the list printed by dirs, starting with zero) to the top of the list by rotating the stack.</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code><span class="hljs-comment">// process.cwd() === '/usr'</span>
+pushd(<span class="hljs-string">'/etc'</span>); <span class="hljs-comment">// Returns /etc /usr</span>
+pushd(<span class="hljs-string">'+1'</span>);   <span class="hljs-comment">// Returns /usr /etc</span></code></pre><p>Save the current directory on the top of the directory stack and then cd to <code>dir</code>. With no arguments, pushd exchanges the top two directories. Returns an array of paths in the stack.</p>
+<a name="popdoptions39n3939n39"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#popdoptions39n3939n39"></a><h3>popd([options,] ['-N' | '+N'])</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>-n</code>: Suppresses the normal change of directory when removing directories from the stack, so that only the stack is manipulated.</li>
+</ul>
+<p>Arguments:</p>
+<ul class="list">
+<li><code>+N</code>: Removes the Nth directory (counting from the left of the list printed by dirs), starting with zero.</li>
+<li><code>-N</code>: Removes the Nth directory (counting from the right of the list printed by dirs), starting with zero.</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>echo(process.cwd()); <span class="hljs-comment">// '/usr'</span>
+pushd(<span class="hljs-string">'/etc'</span>);       <span class="hljs-comment">// '/etc /usr'</span>
+echo(process.cwd()); <span class="hljs-comment">// '/etc'</span>
+popd();              <span class="hljs-comment">// '/usr'</span>
+echo(process.cwd()); <span class="hljs-comment">// '/usr'</span></code></pre><p>When no arguments are given, popd removes the top directory from the stack and performs a cd to the new top directory. The elements are numbered from 0 starting at the first directory listed with dirs; i.e., popd is equivalent to popd +0. Returns an array of paths in the stack.</p>
+<a name="dirsoptions39n3939n39"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#dirsoptions39n3939n39"></a><h3>dirs([options | '+N' | '-N'])</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>-c</code>: Clears the directory stack by deleting all of the elements.</li>
+</ul>
+<p>Arguments:</p>
+<ul class="list">
+<li><code>+N</code>: Displays the Nth directory (counting from the left of the list printed by dirs when invoked without options), starting with zero.</li>
+<li><code>-N</code>: Displays the Nth directory (counting from the right of the list printed by dirs when invoked without options), starting with zero.</li>
+</ul>
+<p>Display the list of currently remembered directories. Returns an array of paths in the stack, or a single path if +N or -N was specified.</p>
+<p>See also: pushd, popd</p>
+<a name="lnoptionssourcedest"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#lnoptionssourcedest"></a><h3>ln(options, source, dest)</h3>
+<a name="lnsourcedest"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#lnsourcedest"></a><h3>ln(source, dest)</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>s</code>: symlink</li>
+<li><code>f</code>: force</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>ln(<span class="hljs-string">'file'</span>, <span class="hljs-string">'newlink'</span>);
+ln(<span class="hljs-string">'-sf'</span>, <span class="hljs-string">'file'</span>, <span class="hljs-string">'existing'</span>);</code></pre><p>Links source to dest. Use -f to force the link, should dest already exist.</p>
+<a name="exitcode"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#exitcode"></a><h3>exit(code)</h3>
+<p>Exits the current process with the given exit code.</p>
+<a name="env39varname39"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#env39varname39"></a><h3>env['VAR_NAME']</h3>
+<p>Object containing environment variables (both getter and setter). Shortcut to process.env.</p>
+<a name="execcommandoptionscallback"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#execcommandoptionscallback"></a><h3>exec(command [, options] [, callback])</h3>
+<p>Available options (all <code>false</code> by default):</p>
+<ul class="list">
+<li><code>async</code>: Asynchronous execution. Defaults to true if a callback is provided.</li>
+<li><code>silent</code>: Do not echo program output to console.</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> version = exec(<span class="hljs-string">'node --version'</span>, {silent:<span class="hljs-literal">true</span>}).output;
+
+<span class="hljs-keyword">var</span> child = exec(<span class="hljs-string">'some_long_running_process'</span>, {async:<span class="hljs-literal">true</span>});
+child.stdout.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> {</span>
+  <span class="hljs-comment">/<em> ... do something with data ... </em>/</span>
+});
+
+exec(<span class="hljs-string">'some_long_running_process'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(code, output)</span> {</span>
+  console.log(<span class="hljs-string">'Exit code:'</span>, code);
+  console.log(<span class="hljs-string">'Program output:'</span>, output);
+});</code></pre><p>Executes the given <code>command</code> <em>synchronously</em>, unless otherwise specified.
+When in synchronous mode returns the object <code>{ code:..., output:... }</code>, containing the program's
+<code>output</code> (stdout + stderr)  and its exit <code>code</code>. Otherwise returns the child process object, and
+the <code>callback</code> gets the arguments <code>(code, output)</code>.</p>
+<p><strong>Note:</strong> For long-lived processes, it's best to run <code>exec()</code> asynchronously as
+the current synchronous implementation uses a lot of CPU. This should be getting
+fixed soon.</p>
+<a name="chmodoctalmodeoctalstringfile"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#chmodoctalmodeoctalstringfile"></a><h3>chmod(octal_mode || octal_string, file)</h3>
+<a name="chmodsymbolicmodefile"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#chmodsymbolicmodefile"></a><h3>chmod(symbolic_mode, file)</h3>
+<p>Available options:</p>
+<ul class="list">
+<li><code>-v</code>: output a diagnostic for every file processed</li>
+<li><code>-c</code>: like verbose but report only when a change is made</li>
+<li><code>-R</code>: change files and directories recursively</li>
+</ul>
+<p>Examples:</p>
+<pre class="hljs"><code>chmod(<span class="hljs-number">755</span>, <span class="hljs-string">'/Users/brandon'</span>);
+chmod(<span class="hljs-string">'755'</span>, <span class="hljs-string">'/Users/brandon'</span>); <span class="hljs-comment">// same as above</span>
+chmod(<span class="hljs-string">'u+x'</span>, <span class="hljs-string">'/Users/brandon'</span>);</code></pre><p>Alters the permissions of a file or directory by either specifying the
+absolute permissions in octal form or expressing the changes in symbols.
+This command tries to mimic the POSIX behavior as much as possible.
+Notable exceptions:</p>
+<ul class="list">
+<li>In symbolic modes, 'a-r' and '-r' are identical.  No consideration is
+given to the umask.</li>
+<li>There is no "quiet" option since default behavior is to run silent.</li>
+</ul>
+<a name="nonunixcommands"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#nonunixcommands"></a><h2>Non-Unix commands</h2>
+<a name="tempdir"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#tempdir"></a><h3>tempdir()</h3>
+<p>Examples:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> tmp = tempdir(); <span class="hljs-comment">// "/tmp" for most *nix platforms</span></code></pre><p>Searches and returns string containing a writeable, platform-dependent temporary directory.
+Follows Python's <a href="http://docs.python.org/library/tempfile.html#tempfile.tempdir">tempfile algorithm</a>.</p>
+<a name="error"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#error"></a><h3>error()</h3>
+<p>Tests if error occurred in the last command. Returns <code>null</code> if no error occurred,
+otherwise returns string explaining the error</p>
+<a name="configuration"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#configuration"></a><h2>Configuration</h2>
+<a name="configsilent"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#configsilent"></a><h3>config.silent</h3>
+<p>Example:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> silentState = config.silent; <span class="hljs-comment">// save old silent state</span>
+config.silent = <span class="hljs-literal">true</span>;
+<span class="hljs-comment">/<em> ... </em>/</span>
+config.silent = silentState; <span class="hljs-comment">// restore old silent state</span></code></pre><p>Suppresses all command output if <code>true</code>, except for <code>echo()</code> calls.
+Default is <code>false</code>.</p>
+<a name="configfatal"></a><a class="anchorlink" href="http://adilapapaya.com/docs/shelljs/#configfatal"></a><h3>config.fatal</h3>
+<p>Example:</p>
+<pre class="hljs"><code>config.fatal = <span class="hljs-literal">true</span>;
+cp(<span class="hljs-string">'this_file_does_not_exist'</span>, <span class="hljs-string">'/dev/null'</span>); <span class="hljs-comment">// dies here</span>
+<span class="hljs-comment">/<em> more commands... </em>/</span></code></pre><p>If <code>true</code> the script will die on errors. Default is <code>false</code>.</p>
+
+       
+        <hr>
+        <footer class="text-center">
+        <span id="copy">
+          Go To: <a href="http://adilapapaya.com/">adilapapaya.com</a>
+          / 
+          <a href="http://adilapapaya.com/docs">readme docs main page</a>   
+        </span>
+        <h6><small id="email" class="text-center"><svg width="260" height="30"><g class="blocks"><g class="block" transform="translate(0,12)rotate(-7.230584621429443)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">A</text></g><g class="block" transform="translate(15,12)rotate(7.305635929107666)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">D</text></g><g class="block" transform="translate(30,12)rotate(-1.353007435798645)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">I</text></g><g class="block" transform="translate(45,12)rotate(4.157276153564453)scale(0.9999999999999999,0.9999999999999999)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">L</text></g><g class="block" transform="translate(60,12)rotate(-4.0390872955322275)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">A</text></g><g class="block" transform="translate(75,12)rotate(8.241178512573242)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">P</text></g><g class="block" transform="translate(90,12)rotate(-8.720561981201172)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">A</text></g><g class="block" transform="translate(105,12)rotate(0.8701335191726685)skewX(0)scale(1,1)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">P</text></g><g class="block" transform="translate(120,12)rotate(-3.651895761489868)skewX(0)scale(1,1)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">A</text></g><g class="block" transform="translate(135,12)rotate(9.243011474609375)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">Y</text></g><g class="block" transform="translate(150,12)rotate(-2.037346839904786)scale(0.9999999999999999,0.9999999999999999)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">A</text></g><g class="block" transform="translate(165,12)rotate(0.2646765112876892)scale(0.9999999999999999,0.9999999999999999)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">@</text></g><g class="block" transform="translate(180,12)rotate(-9.268709182739258)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">G</text></g><g class="block" transform="translate(195,12)rotate(3.732466220855713)skewX(0)scale(1,1)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">M</text></g><g class="block" transform="translate(210,12)rotate(-9.5719633102417)scale(1,1)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">A</text></g><g class="block" transform="translate(225,12)rotate(3.276156425476074)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">I</text></g><g class="block" transform="translate(240,12)rotate(-0.6898131370544434)"><rect width="16" height="16" style="fill: rgb(0, 0, 0);"></rect><text x="8" y="8" dy=".3em" style="text-anchor: middle; fill: rgb(255, 255, 255);">L</text></g></g></svg></small></h6><h6></h6><h6><span id="friends" style="color: rgb(31, 119, 180);">Let's be friends, yes?</span></h6><h6></h6></footer>
+
+      </div>
+       
+    </div>
+</div>
+
+<!-- sidebar-popover js code -->
+<script type="text/javascript" src="./shelljs_files/sidebar-popover.js"></script> 
+
+<!-- Set the page title equal to the library name  -->
+<script type="text/javascript">
+  var title = window.location.pathname.split('/');
+  
+  var page = title[title.length-1];
+  if(page && page.length){
+     var tokens = page.replace('.html','').split('_')
+     page = title[title.length-2] + ' version '+tokens[tokens.length-1];
+  }
+  else page = title[title.length-2];
+   
+  document.title = page;
+</script>
+
+<script type="text/javascript" src="./shelljs_files/d3.min.js"></script>
+<script type="text/javascript" src="./shelljs_files/bounce.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29036360-2', 'adilapapaya.com');
+  ga('send', 'pageview');
+</script>
+
+
+</body></html>

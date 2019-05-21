@@ -1,0 +1,199 @@
+/** 
+Original from http://startbootstrap.com/simple-sidebar
+Edited 04.04.2014 by Adila Papaya so the sidebar isn't as wide
+and sidebar text is visible even if it isn't a link
+Edited 04.21.2014 so it uses .nav.nav-list instead of .sidebar-nav
+Edited further 04.22 so it looks pretty.
+*/
+#wrapper {
+  padding-left: 200px;
+}
+
+#sidebar-wrapper {
+  margin-left: -200px;
+  left: 200px;
+  width: 200px;
+  background: #000;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  z-index: 1000;
+}
+
+#page-content-wrapper {
+  /*width: 100%;*/
+  max-width:900px;
+  margin:auto;
+}
+#wrapper,
+#sidebar-wrapper,
+#page-content-wrapper{
+  transition: all 0.4s ease 0s;
+}
+
+/* Changed all .sidebar-nav to .nav.nav-list */
+.nav.nav-list {
+  /*position: absolute;
+  top: 0;*/
+  width: 180px;
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+   
+}
+
+.nav.nav-list li {
+  padding-left:20px;
+}
+
+.nav.nav-list > li > a {
+  color: #ccc;
+  display: block;
+  text-decoration: none;
+  text-shadow: none;
+  padding:3px; /*override bootstrap's default*/
+}
+
+.nav.nav-list li a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.nav.nav-list li a:active,
+.nav.nav-list li a:focus{
+  text-decoration: none;
+}
+
+/* highlight in orange */
+.nav.nav-list li a .sidebar-highlight{
+  color:#ff7f0e; /*orange*/
+}
+
+/* indent the links depending on the header level*/
+.nav.nav-list li.level-1{
+  padding-left:5px;  
+}
+.nav.nav-list li.level-2{
+  padding-left:15px;
+  font-size:0.95em;
+}
+.nav.nav-list li.level-3{
+  padding-left:25px;
+  font-size:0.92em;
+}
+.nav.nav-list li.level-4{
+  padding-left:35px;
+  font-size:0.90em;
+}
+.nav.nav-list li.level-5{
+  padding-left:45px;
+  font-size:0.88em;
+}
+/*horizontal lines separating the bars */
+#sidebar-wrapper hr{
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-top: 1px solid #666;
+  text-align:right;
+  margin-right:0px;
+}
+hr.level-1{
+  margin-left:5px;
+}
+hr.level-2{
+   margin-left:15px;
+}
+hr.level-3{
+  margin-left:25px;
+}
+hr.level-4{
+  margin-left:35px;
+}
+hr.level-5{
+  margin-left:45px;
+}
+
+.nav.nav-list > .sidebar-brand {
+  font-size: 18px;
+  color: #fff;
+  padding-left:10px;
+}
+
+.nav.nav-list > .sidebar-brand a {
+  color: #999999;
+}
+
+.nav.nav-list > .sidebar-brand a:hover{
+  color: #fff;
+  background: none;
+}
+
+
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.inset {
+  padding: 10px;
+}
+
+@media (max-width:767px) {
+
+  #wrapper {
+    padding-left: 20px;
+    left:0px;
+  }
+
+  #sidebar-wrapper {
+    left: 20px;
+    opacity:.9;
+    overflow-y:hidden;
+    padding-left:10px; /*So we know there's something to the left*/
+  }
+
+  #wrapper.active {
+    position: relative;
+    left: 180px;
+  }
+
+  #wrapper.active #sidebar-wrapper {
+    left: 200px;
+    width: 200px;
+    overflow-y:auto;
+    padding-left:0px;
+  }
+
+
+  #menu-toggle {
+    display: inline-block;
+  }
+
+  .inset {
+    padding: 15px;
+  }
+
+  
+  /*Transitioning in/out on click*/
+  #wrapper.active,
+  #wrapper,
+  #sidebar-wrapper,
+  #wrapper.active #sidebar-wrapper
+  {
+    transition: all 0.4s;/* ease .20s;*/
+  }
+  
+}
